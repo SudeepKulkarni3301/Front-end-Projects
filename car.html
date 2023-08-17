@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+
+    <style>
+        body {
+            background-color: wheat;
+            padding: 20px;
+            margin: 100px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+
+    <br>
+    <div class="text-center">
+        <button id="Accelerate" onclick="speed1()" type="button" class="btn btn-primary">Accelerate</button>
+    </div>
+    <br><br>
+    <div class="text-center">
+        <button id="Decrease" onclick="speed1()" type="button" class="btn btn-primary">Break</button>
+    </div>
+    <br><br>
+    <div class="text-center">
+        <button id="speed" onclick="speed1()" type="button" class="btn btn-primary">Get speed</button>
+    </div>
+    <br><br>
+
+
+    <script>
+        speed = 0;
+        function speed1(action) {
+            
+            
+            if (action === 'Accelerate') {
+                speed += 5;
+                alert('Increased the speed to ' + (speed));
+            } else if (action === 'Decrease') {
+                speed -= 5;
+                alert('Decreased the speed to ' + (speed));
+            } else if (action === 'speed') {
+                alert('The Current speed is ' + speed);
+            }
+        }
+    
+        // Get the button elements by their IDs
+        const accelerateButton = document.getElementById("Accelerate");
+        const decreaseButton = document.getElementById("Decrease");
+        const speedButton = document.getElementById("speed");
+    
+        // Add click event listeners to the buttons
+        accelerateButton.addEventListener("click", function () {
+            speed1('Accelerate');
+        });
+    
+        decreaseButton.addEventListener("click", function () {
+            speed1('Decrease');
+        });
+    
+        speedButton.addEventListener("click", function () {
+            speed1('speed');
+        });
+    </script>
+
+</body>
+
+</html>
